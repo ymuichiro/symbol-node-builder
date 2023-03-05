@@ -15,14 +15,15 @@ su - symbol
 symbol-bootstrap のインストールを開始します。
 
 ```sh
-curl
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ymuichiro/symbol-node-builder/main/scripts/install.sh)"
 ```
 
 ## 権限追加
 
 最後に docker の実行権限を一般ユーザーへ付与します
+`su - symbol` をしなければ変更が適用されないことに注意しましょう
 
 ```
-sudo su
-usermod -aG docker symbol
+sudo usermod -aG docker symbol
+su - symbol
 ```
